@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업무관리_첫페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="h_center clearfix">
+            <div class="m_btn_wrap">
+                <img src="img/m_menu_btn.png">
+            </div>
+            <a class="time_chk_btn" href="#">출석체크</a>
+        </div>
+    </header>
+    <div class="m_nav">
+        <div class="m_close_btn"><img src="img/m_close.png"></div>
+        <ul class="clearfix">
+            <li>
+                <a href="worklist.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico01.png">
+                    </div>
+                    <p>업무관리</p>
+                </a>
+            </li>
+            <li>
+                <a href="project.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico02.png">
+                    </div>
+                    <p>프로젝트현황</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico03.png">
+                    </div>
+                    <p>거래처관리</p>
+                </a>
+            </li>
+            <li>
+                <a href="company.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico04.png">
+                    </div>
+                    <p>참고업체현황</p>
+                </a>
+            </li>
+            <li>
+                <a href="worknow.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico05.png">
+                    </div>
+                    <p>근태현황</p>
+                </a>
+            </li>
+            <li>
+                <a href="task.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico06.png">
+                    </div>
+                    <p>일일업무보고</p>
+                </a>
+            </li>
+            <li>
+                <a href="board.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico07.png">
+                    </div>
+                    <p>사내게시판</p>
+                </a>
+            </li>
+            <li>
+                <a href="money.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico08.png">
+                    </div>
+                    <p>금전간편장부</p>
+                </a>
+            </li>
+            <li>
+                <a href="trade.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico09.png">
+                    </div>
+                    <p>거래명세표</p>
+                </a>
+            </li>
+            <li>
+                <a href="member.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico10.png">
+                    </div>
+                    <p>인사관리</p>
+                </a>
+            </li>
+            <li>
+                <a href="estimate.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico11.png">
+                    </div>
+                    <p>견적서</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(".m_btn_wrap").click(function(event){
+
+            event.preventDefault();
+
+            $(".m_nav").stop().fadeIn();
+        });
+
+        $(".m_close_btn").click(function(event){
+
+            event.preventDefault();
+
+            $(".m_nav").stop().fadeOut();
+        });
+    </script>
+
+    <div id="worklist_wrap">
+        <h3 style="width:96%; padding-bottom:10px; border-bottom:2px solid #999; margin:0 auto 20px; font-size:18px;">업무관리</h3>
+        <div class="secbox">
+            <!---------------------여기서부터 시작------------------------------>
+            <div class="row">
+                <div class="row_tit">
+                    <p>업무현황</p>
+                </div>
+                <div class="row_input clearfix">
+                    <div class="checks">
+                        <input type="radio" id="worknow" name="f_search" value="업무" checked="">
+                        <label for="worknow">나의 업무현황</label>
+                    </div>
+                    <div class="checks">
+                        <input type="radio" id="workreque" name="f_search" value="요청">
+                        <label for="workreque">내가 요청한 업무</label>
+                    </div>
+                    <div class="checks">
+                        <input type="radio" id="workall" name="f_search" value="전체">
+                        <label for="workall">전체 업무현황</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row_tit">
+                    <p>프로젝트</p>
+                </div>
+                <div class="row_input tit2080">
+                    <input type="text" name="f_project" value="">
+                    <select name="set_project" onchange="projectName(this.selectedIndex)">
+                        <option value="">===</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row_tit">
+                    <p>제목</p>
+                </div>
+                <div class="row_input tit100">
+                    <input type="text" name="f_project" value="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="row_tit">
+                    <p>내용</p>
+                </div>
+                <div class="row_input tit2080">
+                    <input type="text" name="f_project" value="">
+                    <select name="set_project" onchange="projectName(this.selectedIndex)">
+                        <option value="">===</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row_tit">
+                    <p>담당자</p>
+                </div>
+                <div class="row_input tit50 clearfix">
+                    <select name="f_team" onchange="set_tmlist('frm_list','f_re_name',this.value,'');">
+                        <option value="">===</option>
+                        <option value="1팀">1팀</option>
+                        <option value="2팀">2팀</option>
+                        <option value="3팀">3팀</option>
+                    </select>
+                    <select name="f_re_name">
+                        <option value="">===</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row_tit">
+                    <p>요청자</p>
+                </div>
+                <div class="row_input">
+                    <select name="f_name" style="width:49%;">
+                        <option value="">===</option>
+                        <option value="">hannah2107</option>
+                        <option value="">박하나</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row_tit">
+                    <p>진행상태</p>
+                </div>
+                <div class="row_input tit06">
+                    <div class="checks">
+                        <input id="request" type="checkbox" name="f_state01" value="요청" checked="">
+                        <label for="request">요청</label>
+                    </div>
+                    <div class="checks">
+                        <input id="receipt" type="checkbox" name="f_state02" value="접수" checked="">
+                        <label for="receipt">접수</label>
+                    </div>
+                    <div class="checks">
+                        <input id="proceed" type="checkbox" name="f_state03" value="진행" checked="">
+                        <label for="proceed">진행</label>
+                    </div>
+                    <div class="checks">
+                        <input id="result" type="checkbox" name="f_state04" value="처리결과" checked="">
+                        <label for="result">처리결과</label>
+                    </div>
+                    <div class="checks">
+                        <input id="finish" type="checkbox" name="f_state05" value="완료" checked="">
+                        <label for="finish">완료</label>
+                    </div>
+                </div>
+            </div>
+            <div class="h_longer">
+                <img src="img/m_menu_down.png">
+                <img src="img/m_menu_up.png">
+            </div>
+        </div>
+        <div class="btnWrap">
+            <a class="regi_btn" href="worklist_01.html">등록</a>
+            <a class="sear_btn" href="#">검색</a>
+            <a class="reset_btn" href="#">초기화</a>
+        </div>
+        <div class="tabbox_wrap">
+            <ul class="tabbtn">
+                <li class="on">나의 업무현황</li>
+                <li>내가 요청한 업무</li>
+                <li>전체 업무현황</li>
+            </ul>
+            <div class="tab_cont_wrap">
+                <div class="tab_cont">
+
+                    
+                    <!--추가되어야할 박스-->
+                    <div class="w_l_cont">
+                        <a href="worklist_02.html">
+                            <ul>
+                                <li class="w_l_first clearfix">
+                                    <span class="worklist_nm"><span>요청자:&nbsp&nbsp</span>아이웹님</span>
+                                    <span class="worklist_date">01/20</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="worklist_sta" style="background: #6fbc00;">요청</span>
+                                    <span class="worklist_tit">모바일화 구축 작업</span>
+                                    <span class="worklist_much">긴급(시급)</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                    <!--추가되어야할 박스-->
+                    <div class="w_l_cont">
+                        <a href="worklist_02.html">
+                            <ul>
+                                <li class="w_l_first clearfix">
+                                    <span class="worklist_nm"><span>요청자:&nbsp&nbsp</span>대표님</span>
+                                    <span class="worklist_date">01/20</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="worklist_sta" style="background: #a1a1a1;">처리결과</span>
+                                    <span class="worklist_tit">주간 업무 보고 바랍니다.</span>
+                                    <span class="worklist_much">긴급(시급)</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                    <!--추가되어야할 박스-->
+                    <div class="w_l_cont">
+                        <a href="worklist_02.html">
+                            <ul>
+                                <li class="w_l_first clearfix">
+                                    <span class="worklist_nm"><span>요청자:&nbsp&nbsp</span>아이웹님</span>
+                                    <span class="worklist_date">01/20</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="worklist_sta" style="background: #de712e;">완료</span>
+                                    <span class="worklist_tit">모바일화 구축 작업</span>
+                                    <span class="worklist_much">긴급(시급)</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                    <!--추가되어야할 박스-->
+                    <div class="w_l_cont">
+                        <a href="worklist_02.html">
+                            <ul>
+                                <li class="w_l_first clearfix">
+                                    <span class="worklist_nm"><span>요청자:&nbsp&nbsp</span>대표님</span>
+                                    <span class="worklist_date">01/20</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="worklist_sta" style="background: #a1a1a1;">처리결과</span>
+                                    <span class="worklist_tit">주간 업무 보고 바랍니다.</span>
+                                    <span class="worklist_much">긴급(시급)</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                    <!--추가되어야할 박스-->
+
+
+                </div>
+                <div class="tab_cont">
+
+
+                    <!--추가되어야할 박스-->
+                    <div class="w_l_cont">
+                        <a href="worklist_02.html">
+                            <ul>
+                                <li class="w_l_first clearfix">
+                                    <span class="worklist_nm"><span>요청자:&nbsp&nbsp</span>아이웹님</span>
+                                    <span class="worklist_date">01/20</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="worklist_sta" style="background: #6fbc00;">요청</span>
+                                    <span class="worklist_tit">모바일화 구축 작업</span>
+                                    <span class="worklist_much">긴급(시급)</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                    <!--추가되어야할 박스-->
+                    <div class="w_l_cont">
+                        <a href="worklist_02.html">
+                            <ul>
+                                <li class="w_l_first clearfix">
+                                    <span class="worklist_nm"><span>요청자:&nbsp&nbsp</span>아이웹님</span>
+                                    <span class="worklist_date">01/20</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="worklist_sta" style="background: #6fbc00;">요청</span>
+                                    <span class="worklist_tit">모바일화 구축 작업</span>
+                                    <span class="worklist_much">긴급(시급)</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                    <!--추가되어야할 박스-->
+                    <div class="w_l_cont">
+                        <a href="worklist_02.html">
+                            <ul>
+                                <li class="w_l_first clearfix">
+                                    <span class="worklist_nm"><span>요청자:&nbsp&nbsp</span>아이웹님</span>
+                                    <span class="worklist_date">01/20</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="worklist_sta" style="background: #de712e;">완료</span>
+                                    <span class="worklist_tit">모바일화 구축 작업</span>
+                                    <span class="worklist_much">긴급(시급)</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                    <!--추가되어야할 박스-->
+
+
+                </div>
+                <div class="tab_cont">
+
+
+                    <!--추가되어야할 박스-->
+                    <div class="w_l_cont">
+                        <a href="worklist_02.html">
+                            <ul>
+                                <li class="w_l_first clearfix">
+                                    <span class="worklist_nm"><span>요청자:&nbsp&nbsp</span>아이웹님</span>
+                                    <span class="worklist_date">01/20</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="worklist_sta" style="background: #6fbc00;">요청</span>
+                                    <span class="worklist_tit">모바일화 구축 작업</span>
+                                    <span class="worklist_much">긴급(시급)</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                    <!--추가되어야할 박스-->
+                    <div class="w_l_cont">
+                        <a href="worklist_02.html">
+                            <ul>
+                                <li class="w_l_first clearfix">
+                                    <span class="worklist_nm"><span>요청자:&nbsp&nbsp</span>대표님</span>
+                                    <span class="worklist_date">01/20</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="worklist_sta" style="background: #a1a1a1;">처리결과</span>
+                                    <span class="worklist_tit">주간 업무 보고 바랍니다.</span>
+                                    <span class="worklist_much">긴급(시급)</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                    <!--추가되어야할 박스-->
+                    <div class="w_l_cont">
+                        <a href="worklist_02.html">
+                            <ul>
+                                <li class="w_l_first clearfix">
+                                    <span class="worklist_nm"><span>요청자:&nbsp&nbsp</span>아이웹님</span>
+                                    <span class="worklist_date">01/20</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="worklist_sta" style="background: #de712e;">완료</span>
+                                    <span class="worklist_tit">모바일화 구축 작업</span>
+                                    <span class="worklist_much">긴급(시급)</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                    <!--추가되어야할 박스-->
+                    <div class="w_l_cont">
+                        <a href="worklist_02.html">
+                            <ul>
+                                <li class="w_l_first clearfix">
+                                    <span class="worklist_nm"><span>요청자:&nbsp&nbsp</span>대표님</span>
+                                    <span class="worklist_date">01/20</span>
+                                </li>
+                                <li class="clearfix">
+                                    <span class="worklist_sta" style="background: #a1a1a1;">처리결과</span>
+                                    <span class="worklist_tit">주간 업무 보고 바랍니다.</span>
+                                    <span class="worklist_much">긴급(시급)</span>
+                                </li>
+                            </ul>
+                        </a>
+                    </div>
+                    <!--추가되어야할 박스-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var flag = true;
+        $(".h_longer").click(function(event){
+
+            event.preventDefault();
+            if(flag){
+                $(".secbox").css({"height" : "380px", "transition" : "all 1s"});
+                $(".secbox .row:nth-child(1)").css("padding", "5px 0");
+                $(".h_longer img:nth-child(2)").show();
+                $(".h_longer img:nth-child(1)").hide();
+
+                flag= false;
+            } else {
+                $(".secbox").css("transition","all 0s");
+
+                $(".secbox").stop().animate({"height":"110px"},600,function(){
+                    $(".secbox .row:nth-child(1)").css("padding", "5px 0 48px");
+                });
+                $(".h_longer img:nth-child(2)").hide();
+                $(".h_longer img:nth-child(1)").show();
+
+                flag= true;
+            }
+        });
+
+        $(".tabbtn > li").on("click",function(event){
+
+            event.preventDefault();
+
+            let tabNumber = $(this).index();
+
+            $(".tabbtn > li").removeClass("on");
+            $(this).addClass("on");
+
+            $(".tab_cont_wrap .tab_cont").hide();;
+            $(".tab_cont_wrap .tab_cont").eq(tabNumber).show();
+
+        });
+    </script>
+    <footer>
+        <div class="f_center">
+            <ul class="clearfix">
+                <li>
+                    <a href="worknow.html" title="근태현황">
+                        <img src="img/m_menu_ico05.png">
+                        <p>근태현황</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="worklist_01.html" title="업무요청">
+                        <img src="img/m_menu_ico01.png">
+                        <p>업무요청</p>
+                    </a>
+                </li>
+                <li class="home_btn">
+                    <a href="index.html" title="home">
+                        <img src="img/home-page.png">
+                        <p>홈</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="board.html" title="공지사항">
+                        <img src="img/m_menu_ico07.png">
+                        <p>공지사항</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="worklist.html" title="업무관리">
+                        <img src="img/m_manage.png">
+                        <p>업무관리</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>거래명세표_환경설정화면</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="h_center clearfix">
+            <div class="m_btn_wrap">
+                <img src="img/m_menu_btn.png">
+            </div>
+            <a class="time_chk_btn" href="#">출석체크</a>
+        </div>
+    </header>
+    <div class="m_nav">
+        <div class="m_close_btn"><img src="img/m_close.png"></div>
+        <ul class="clearfix">
+            <li>
+                <a href="worklist.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico01.png">
+                    </div>
+                    <p>업무관리</p>
+                </a>
+            </li>
+            <li>
+                <a href="project.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico02.png">
+                    </div>
+                    <p>프로젝트현황</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico03.png">
+                    </div>
+                    <p>거래처관리</p>
+                </a>
+            </li>
+            <li>
+                <a href="company.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico04.png">
+                    </div>
+                    <p>참고업체현황</p>
+                </a>
+            </li>
+            <li>
+                <a href="worknow.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico05.png">
+                    </div>
+                    <p>근태현황</p>
+                </a>
+            </li>
+            <li>
+                <a href="task.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico06.png">
+                    </div>
+                    <p>일일업무보고</p>
+                </a>
+            </li>
+            <li>
+                <a href="board.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico07.png">
+                    </div>
+                    <p>사내게시판</p>
+                </a>
+            </li>
+            <li>
+                <a href="money.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico08.png">
+                    </div>
+                    <p>금전간편장부</p>
+                </a>
+            </li>
+            <li>
+                <a href="trade.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico09.png">
+                    </div>
+                    <p>거래명세표</p>
+                </a>
+            </li>
+            <li>
+                <a href="member.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico10.png">
+                    </div>
+                    <p>인사관리</p>
+                </a>
+            </li>
+            <li>
+                <a href="estimate.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico11.png">
+                    </div>
+                    <p>견적서</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(".m_btn_wrap").click(function(event){
+
+            event.preventDefault();
+
+            $(".m_nav").stop().fadeIn();
+        });
+
+        $(".m_close_btn").click(function(event){
+
+            event.preventDefault();
+
+            $(".m_nav").stop().fadeOut();
+        });
+    </script>
+
+    <div id="trade_option_wrap">
+        <h3>환경설정</h3>
+        <div id="search_bar">
+            <div class="secbox">
+                <!---------------------여기서부터 시작------------------------------>
+                
+                <div class="row">
+                    <div class="row_tit">
+                        <p>사업자번호</p>
+                    </div>
+                    <div class="row_input wid77">
+                        <input type="text" name="f_project" value="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="row_tit">
+                        <p>이메일</p>
+                    </div>
+                    <div class="row_input">
+                        <input type="text" name="f_project" value="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="row_tit">
+                        <p>상호</p>
+                    </div>
+                    <div class="row_input">
+                        <input type="text" name="f_project" value="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="row_tit">
+                        <p>성명</p>
+                    </div>
+                    <div class="row_input">
+                        <input type="text" name="f_project" value="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="row_tit">
+                        <p>전화번호</p>
+                    </div>
+                    <div class="row_input">
+                        <input type="text" name="f_project" value="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="row_tit">
+                        <p>휴대폰번호</p>
+                    </div>
+                    <div class="row_input wid77">
+                        <input type="text" name="f_project" value="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="row_tit">
+                        <p>계좌정보</p>
+                    </div>
+                    <div class="row_input">
+                        <input type="text" name="f_project" value="">
+                    </div>
+                </div>
+
+                <div class="row row_address_wrap">
+                    <div class="row_tit">
+                        <p>사업장주소</p>
+                    </div>
+                    <div class="row_input wid77">
+                        <input type="text" name="f_project" value="" placeholder="기본주소">
+                        <button>주소검색</button>
+                        <input type="text" placeholder="상세주소" style="width:100%;">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="row_tit">
+                        <p>업태</p>
+                    </div>
+                    <div class="row_input">
+                        <input type="text" name="f_project" value="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="row_tit">
+                        <p>업종</p>
+                    </div>
+                    <div class="row_input">
+                        <input type="text" name="f_project" value="">
+                    </div>
+                </div>
+
+                <div class="row row_img_wrap">
+                    <div class="row_tit">
+                        <p>서명 이미지</p>
+                    </div>
+                    <div class="row_input">
+                        <input type="text" name="f_project" value="">
+                        <button>찾아보기</button>
+                        <p style="margin-top:5px; font-size:12px; color:#4c4c4c; line-height:18px;">* 가로 65px, 세로 65px 사이즈로 올려주시기 바랍니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btnWrap">
+            <a class="regi_btn" href="#">저장</a>
+            <a class="sear_btn" href="trade.html">취소</a>
+        </div>
+    </div>
+    
+
+    <footer>
+        <div class="f_center">
+            <ul class="clearfix">
+                <li>
+                    <a href="worknow.html" title="근태현황">
+                        <img src="img/m_menu_ico05.png">
+                        <p>근태현황</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="worklist_01.html" title="업무요청">
+                        <img src="img/m_menu_ico01.png">
+                        <p>업무요청</p>
+                    </a>
+                </li>
+                <li class="home_btn">
+                    <a href="index.html" title="home">
+                        <img src="img/home-page.png">
+                        <p>홈</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="board.html" title="공지사항">
+                        <img src="img/m_menu_ico07.png">
+                        <p>공지사항</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="worklist.html" title="업무관리">
+                        <img src="img/m_manage.png">
+                        <p>업무관리</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

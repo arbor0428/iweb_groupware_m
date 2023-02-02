@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>근태현황_첫화면</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="h_center clearfix">
+            <div class="m_btn_wrap">
+                <img src="img/m_menu_btn.png">
+            </div>
+            <a class="time_chk_btn" href="#">출석체크</a>
+        </div>
+    </header>
+    <div class="m_nav">
+        <div class="m_close_btn"><img src="img/m_close.png"></div>
+        <ul class="clearfix">
+            <li>
+                <a href="worklist.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico01.png">
+                    </div>
+                    <p>업무관리</p>
+                </a>
+            </li>
+            <li>
+                <a href="project.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico02.png">
+                    </div>
+                    <p>프로젝트현황</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico03.png">
+                    </div>
+                    <p>거래처관리</p>
+                </a>
+            </li>
+            <li>
+                <a href="company.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico04.png">
+                    </div>
+                    <p>참고업체현황</p>
+                </a>
+            </li>
+            <li>
+                <a href="worknow.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico05.png">
+                    </div>
+                    <p>근태현황</p>
+                </a>
+            </li>
+            <li>
+                <a href="task.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico06.png">
+                    </div>
+                    <p>일일업무보고</p>
+                </a>
+            </li>
+            <li>
+                <a href="board.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico07.png">
+                    </div>
+                    <p>사내게시판</p>
+                </a>
+            </li>
+            <li>
+                <a href="money.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico08.png">
+                    </div>
+                    <p>금전간편장부</p>
+                </a>
+            </li>
+            <li>
+                <a href="trade.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico09.png">
+                    </div>
+                    <p>거래명세표</p>
+                </a>
+            </li>
+            <li>
+                <a href="member.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico10.png">
+                    </div>
+                    <p>인사관리</p>
+                </a>
+            </li>
+            <li>
+                <a href="estimate.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico11.png">
+                    </div>
+                    <p>견적서</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(".m_btn_wrap").click(function(event){
+
+            event.preventDefault();
+
+            $(".m_nav").stop().fadeIn();
+        });
+
+        $(".m_close_btn").click(function(event){
+
+            event.preventDefault();
+
+            $(".m_nav").stop().fadeOut();
+        });
+    </script>
+
+    <div id="worknow_wrap">
+        <h3>근태현황</h3>
+        <div id="search_bar">
+            <div class="secbox">
+                <!---------------------여기서부터 시작------------------------------>
+                <div class="row">
+                    <div class="row_tit">
+                        <p>조회일자</p>
+                    </div>
+                    <div class="row_input">
+                        <select name="_year" style="width: 43%;text-align: center;">
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                            <option value="2012">2012</option>
+                            <option value="2013">2013</option>
+                            <option value="2014">2014</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022" selected="">2022</option>						
+                        </select>&nbsp;년
+                        <select name="_month" style="width: 43%;text-align: center">
+                            <option value="1">1</option>
+                            <option value="2" selected="">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>&nbsp;월
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="row_tit">
+                        <p>담당자</p>
+                    </div>
+                    <div class="row_input">
+                        <select name="_name" style="width:43%;width: 100%;text-align: center;">
+                            <option value="===">===</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="btnWrap">
+                <a class="sear_btn" href="#">검색</a>
+            </div>
+        </div>
+        <div class="worknow_box">
+            <div class="worknow_tit">
+                <span>일자</span>
+                <span>구분</span>
+                <span>출근시간</span>
+                <span>퇴근시간</span>
+                <span></span>
+            </div>
+
+            <!------추가되는 박스------->
+            <div class="worknow_row">
+                <span>2022-02-01</span>
+                <span>출근</span>
+                <span>08:50</span>
+                <span>06:10</span>
+                <span class="more_g_btn"><a href="worknow_01.html">더보기</a></span>
+            </div>
+            <!------추가되는 박스------->
+
+            <!------추가되는 박스------->
+            <div class="worknow_row">
+                <span>2022-02-02</span>
+                <span>지각</span>
+                <span>09:50</span>
+                <span>06:10</span>
+                <span class="more_g_btn"><a href="worknow_01.html">더보기</a></span>
+            </div>
+            <!------추가되는 박스------->
+
+            <!------추가되는 박스------->
+            <div class="worknow_row">
+                <span>2022-02-03</span>
+                <span>조퇴</span>
+                <span>09:50</span>
+                <span>02:10</span>
+                <span class="more_g_btn"><a href="worknow_01.html">더보기</a></span>
+            </div>
+            <!------추가되는 박스------->
+
+            <!------추가되는 박스------->
+            <div class="worknow_row">
+                <span>2022-02-03</span>
+                <span>결근</span>
+                <span>-</span>
+                <span>-</span>
+                <span class="more_g_btn"><a href="worknow_01.html">더보기</a></span>
+            </div>
+            <!------추가되는 박스------->
+        </div>
+    </div>
+    
+
+    <footer>
+        <div class="f_center">
+            <ul class="clearfix">
+                <li>
+                    <a href="worknow.html" title="근태현황">
+                        <img src="img/m_menu_ico05.png">
+                        <p>근태현황</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="worklist_01.html" title="업무요청">
+                        <img src="img/m_menu_ico01.png">
+                        <p>업무요청</p>
+                    </a>
+                </li>
+                <li class="home_btn">
+                    <a href="index.html" title="home">
+                        <img src="img/home-page.png">
+                        <p>홈</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="board.html" title="공지사항">
+                        <img src="img/m_menu_ico07.png">
+                        <p>공지사항</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="worklist.html" title="업무관리">
+                        <img src="img/m_manage.png">
+                        <p>업무관리</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

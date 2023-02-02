@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인사관리_첫화면</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="h_center clearfix">
+            <div class="m_btn_wrap">
+                <img src="img/m_menu_btn.png">
+            </div>
+            <a class="time_chk_btn" href="#">출석체크</a>
+        </div>
+    </header>
+    <div class="m_nav">
+        <div class="m_close_btn"><img src="img/m_close.png"></div>
+        <ul class="clearfix">
+            <li>
+                <a href="worklist.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico01.png">
+                    </div>
+                    <p>업무관리</p>
+                </a>
+            </li>
+            <li>
+                <a href="project.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico02.png">
+                    </div>
+                    <p>프로젝트현황</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico03.png">
+                    </div>
+                    <p>거래처관리</p>
+                </a>
+            </li>
+            <li>
+                <a href="company.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico04.png">
+                    </div>
+                    <p>참고업체현황</p>
+                </a>
+            </li>
+            <li>
+                <a href="worknow.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico05.png">
+                    </div>
+                    <p>근태현황</p>
+                </a>
+            </li>
+            <li>
+                <a href="task.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico06.png">
+                    </div>
+                    <p>일일업무보고</p>
+                </a>
+            </li>
+            <li>
+                <a href="board.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico07.png">
+                    </div>
+                    <p>사내게시판</p>
+                </a>
+            </li>
+            <li>
+                <a href="money.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico08.png">
+                    </div>
+                    <p>금전간편장부</p>
+                </a>
+            </li>
+            <li>
+                <a href="trade.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico09.png">
+                    </div>
+                    <p>거래명세표</p>
+                </a>
+            </li>
+            <li>
+                <a href="member.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico10.png">
+                    </div>
+                    <p>인사관리</p>
+                </a>
+            </li>
+            <li>
+                <a href="estimate.html">
+                    <div class="nav_img_wrap">
+                        <img src="img/m_menu_ico11.png">
+                    </div>
+                    <p>견적서</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(".m_btn_wrap").click(function(event){
+
+            event.preventDefault();
+
+            $(".m_nav").stop().fadeIn();
+        });
+
+        $(".m_close_btn").click(function(event){
+
+            event.preventDefault();
+
+            $(".m_nav").stop().fadeOut();
+        });
+    </script>
+
+    <div id="member_wrap">
+        <h3>인사관리</h3>
+        <div id="search_bar">
+            <div class="secbox">
+                <!---------------------여기서부터 시작------------------------------>
+                
+                <div class="row row_info">
+                    <div class="row_tit">
+                        <p>소속정보</p>
+                    </div>
+                    <div class="row_input">
+                        <input type="text" name="f_project" value="">
+                        <p>* 소속명을 콤마(,) 단위로 구분하여 입력하여 주십시오. 예) 1팀,2팀,3팀,총무부,영업부</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btnWrap">
+            <a class="sear_btn" href="#">저장</a>
+        </div>
+
+        <div class="memberlist">
+            <div class="member_tit">
+                <span>성명</span>
+                <span>소속</span>
+                <span>휴대전화</span>
+                <span></span>
+            </div>
+            <!-----추가되는 div------>
+            <div class="member_box">
+                <span>박하나</span>
+                <span>1팀</span>
+                <span>010-1234-1234</span>
+                <span class="more_g_btn"><a href="member_02.html">더보기</a></span>
+            </div>
+            <!-----추가되는 div------>
+
+            <!-----추가되는 div------>
+            <div class="member_box">
+                <span>박하나</span>
+                <span>1팀</span>
+                <span>010-1234-1234</span>
+                <span class="more_g_btn"><a href="member_02.html">더보기</a></span>
+            </div>
+            <!-----추가되는 div------>
+
+            <!-----추가되는 div------>
+            <div class="member_box">
+                <span>박하나</span>
+                <span>1팀</span>
+                <span>010-1234-1234</span>
+                <span class="more_g_btn"><a href="member_02.html">더보기</a></span>
+            </div>
+            <!-----추가되는 div------>
+        </div>
+
+        <div class="btnWrap">
+            <a class="regi_btn" href="member_01.html">등록</a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="f_center">
+            <ul class="clearfix">
+                <li>
+                    <a href="worknow.html" title="근태현황">
+                        <img src="img/m_menu_ico05.png">
+                        <p>근태현황</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="worklist_01.html" title="업무요청">
+                        <img src="img/m_menu_ico01.png">
+                        <p>업무요청</p>
+                    </a>
+                </li>
+                <li class="home_btn">
+                    <a href="index.html" title="home">
+                        <img src="img/home-page.png">
+                        <p>홈</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="board.html" title="공지사항">
+                        <img src="img/m_menu_ico07.png">
+                        <p>공지사항</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="worklist.html" title="업무관리">
+                        <img src="img/m_manage.png">
+                        <p>업무관리</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
